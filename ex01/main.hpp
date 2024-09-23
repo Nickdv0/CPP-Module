@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:36:32 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/09/23 17:34:27 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:55:27 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ class PhoneBook {
 		}
 	}
 
-	// void	SearchContact(const std::string& KeyWord) const
-	// {
-	// 	for (int i = 0; i < 8; i++)
-	// 	{
-			
-	// 	}
-	// }
+	void	SearchContact(const int& index) const
+	{
+			if (this->contacts[index].firstName.empty())
+			{
+				
+			}
+	}
 };
 
 #endif
