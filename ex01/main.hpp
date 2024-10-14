@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:36:32 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/10/14 15:28:57 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:54:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,23 @@ class PhoneBook {
 	
 	PhoneBook() : index(0) {}
 	
-	void	AddContact(const std::string& firstName, const std::string& lastName, const std::string& nickName, const std::string& phoneNumber, const std::string& darkestSecret)
+	void	AddContact(void)
 	{
+		std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
+    	std::cout << "Enter first name: ";
+    	std::cin >> firstName;
 		this->contacts[index].setfirstName(firstName);
+		std::cout << "Enter last name: ";
+		std::cin >> lastName;
         this->contacts[index].setlastName(lastName);
+		std::cout << "Enter nick name: ";
+		std::cin >> nickName;
         this->contacts[index].setnickName(nickName);
+		std::cout << "Enter phone number: ";
+		std::cin >> phoneNumber;
         this->contacts[index].setphoneNumber(phoneNumber);
+		std::cout << "Enter darkest secret: ";
+		std::cin >> darkestSecret;
         contacts[index].setDarkestSecret(darkestSecret);
 		index = (index + 1) % 8;
 	}
