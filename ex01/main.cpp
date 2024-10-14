@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/09/23 17:49:35 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:16:49 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@ int	main(void)
 			std::cin >> nickName;
 			std::cout << "Enter phone number: ";
 			std::cin >> phoneNumber;
-			std::cout << "Enter darkes secret: ";
+			std::cout << "Enter darkest secret: ";
 			std::cin >> darkestSecret;
 			phoneBook.AddContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 		}
 		else if (std::string("SEARCH").compare(input) == 0)
 		{
 			phoneBook.printContacts() ;
-			
 		}
 		else if (std::string("EXIT").compare(input) == 0)
 			break ;
