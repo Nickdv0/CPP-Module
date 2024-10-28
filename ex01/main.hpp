@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:36:32 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/10/22 13:55:51 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:15:39 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ class PhoneBook {
 	public:
 		Contact contacts[8];
 	
-	void	PhoneBook(void);
+	PhoneBook(void);
+	~PhoneBook(void);
 	void	AddContact(void);
 	void	printContacts(void) const;
 	void	SearchContact(std::string& index);
