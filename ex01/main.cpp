@@ -6,11 +6,15 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/10/22 14:02:24 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:22:27 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include "PhoneBook.hpp"
+#include <iostream>
+#include <algorithm>
+#include <cctype>
+#include <cstdlib>
 
 std::string Contact::limitString(const std::string& str) const 
 {
@@ -73,6 +77,11 @@ bool	check_digit(std::string& number)
 PhoneBook::PhoneBook(void)
 {
 	index = 0;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	return ;
 }
 
 void	PhoneBook::AddContact(void)
