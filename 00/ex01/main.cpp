@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/13 15:36:27 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:53:29 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>
+
+int containOnlySpace(std::string str)
+{
+	for (std::size_t i = 0; i < 9 && str[i] != '\0'; i++)
+	{
+		if (std::isspace(str[i]) == 0)
+			return (0);
+	}
+	return (1);
+}
 
 int ft_strcmp(std::string s1, std::string s2)
 {
@@ -53,8 +63,12 @@ Contact::~Contact(void)
 
 std::string Contact::limitString(const std::string& str) const 
 {
+	int space = 9;
 	std::string input = str;
-	
+
+	while (str[space] == ' ')
+		space--;
+	input = str.substr(0, space + 1);
 	while (input.length() == 0)
 	{
 		std::cout << "Input is empty, please enter a valid input.\nInput: " << std::endl;
@@ -123,19 +137,29 @@ void	PhoneBook::AddContact(void)
 	std::string phoneNumber;
 	std::string darkestSecret;
 
-	std::cout << "Please enter the following information:\nFirst Name: " << std::endl;
-	std::getline(std::cin, firstName);
-	std::cout << "Last Name: " << std::endl;
-	std::getline(std::cin, lastName);
-	std::cout << "Nick Name: " << std::endl;
-	std::getline(std::cin, nickName);
 	do
 	{
-		std::cout << "Phone Number: " << std::endl;
-		std::getline(std::cin, phoneNumber);
-	} while (!check_digit(phoneNumber));
-	std::cout << "Darkest Secret: " << std::endl;
-	std::getline(std::cin, darkestSecret);
+		std::cout << "Please enter the following information:\nFirst Name: " << std::endl;
+		std::getline(std::cin, firstName);
+	} while (containOnlySpace(firstName));
+	do 
+	{
+		std::cout << "Last Name: " << std::endl;
+		std::getline(std::cin, lastName);
+	} while (containOnlySpace(lastName));
+	do
+	{
+		std::cout << "Nick Name: " << std::endl;
+		std::getline(std::cin, nickName);
+	} while (containOnlySpace(nickName));
+	std::cout << "Phone Number: " << std::endl;
+	std::getline(std::cin, phoneNumber);
+	check_digit(phoneNumber);
+	do
+	{
+		std::cout << "Darkest Secret: " << std::endl;
+		std::getline(std::cin, darkestSecret);
+	} while (containOnlySpace(darkestSecret));
 	contacts[index] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	index = (index + 1) % 8;
 }
