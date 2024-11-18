@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/18 14:19:35 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:56:57 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ bool	check_digit(std::string& number)
 {
 	for (std::size_t i = 0; i < number.length(); i++)
 	{
+		if (std::cin.eof())
+			return (0);
 		if (!isdigit(number[i]))
 		{
 			std::cout << "Invalid input, please input numbers only.\nInput: " << std::endl;
@@ -116,6 +118,8 @@ bool	check_digit(std::string& number)
 			return (false);
 		}
 	}
+	if (std::cin.eof())
+			return (0);
 	return (true);
 }
 PhoneBook::PhoneBook(void)
@@ -138,27 +142,39 @@ void	PhoneBook::AddContact(void)
 
 	do
 	{
+		if (std::cin.eof())
+			return ;
 		std::cout << "Please enter the following information:\nFirst Name: " << std::endl;
 		std::getline(std::cin, firstName);
 	} while (containOnlySpace(firstName));
 	do 
 	{
+		if (std::cin.eof())
+			return ;
 		std::cout << "Last Name: " << std::endl;
 		std::getline(std::cin, lastName);
-	} while (containOnlySpace(lastName));
+	} while (containOnlySpace(lastName) );
 	do
 	{
+		if (std::cin.eof())
+			return ;
 		std::cout << "Nick Name: " << std::endl;
 		std::getline(std::cin, nickName);
 	} while (containOnlySpace(nickName));
+	if (std::cin.eof())
+			return ;
 	std::cout << "Phone Number: " << std::endl;
 	std::getline(std::cin, phoneNumber);
 	check_digit(phoneNumber);
 	do
 	{
+		if (std::cin.eof())
+			return ;
 		std::cout << "Darkest Secret: " << std::endl;
 		std::getline(std::cin, darkestSecret);
 	} while (containOnlySpace(darkestSecret));
+	if (std::cin.eof())
+			return ;
 	contacts[index] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	index = (index + 1) % 8;
 }
@@ -218,6 +234,8 @@ int	main(void)
 	// phoneBook.fillPhonebook();
 	while (true)
 	{
+		if (std::cin.eof())
+			break ;
 		std::cout << "Enter one of the following commands :\n\t- ADD\n\t- SEARCH\n\t- EXIT" << std::endl;
 		std::getline(std::cin, input);
 		std::transform(input.begin(), input.end(), input.begin(), ::toupper);
