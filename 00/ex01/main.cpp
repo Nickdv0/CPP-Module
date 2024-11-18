@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/18 16:56:57 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:46:57 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,16 @@
 #include <cctype>
 #include <cstdlib>
 
+unsigned char convertToSpace(unsigned char c)
+{
+	if (std::isspace(c))
+		return (' ');
+	return (c);
+}
+
 int containOnlySpace(std::string str)
 {
-	for (std::size_t i = 0; i < 9 && str[i] != '\0'; i++)
+	for (std::size_t i = 0; str[i] != '\0' && i < str.length(); i++)
 	{
 		if (std::isspace(str[i]) == 0)
 			return (0);
@@ -64,20 +71,25 @@ Contact::~Contact(void)
 std::string Contact::limitString(const std::string& str) const 
 {
 	std::string input = str;
-	
-	if (input[9] == ' ')
-	{
-		input = input.substr(0, 9);
-	}
+	int space = 0;
+
+	std::transform(input.begin(), input.end(), input.begin(), convertToSpace);
+	while (input[space] != '\0' && std::isspace(input[space]))
+		space++;
+	if (input[space] == '\0')
+		return ("       NaN");
+	input = input.substr(space, input.length());
 	if (input.length() > 10)
 	{
-		return (input.substr(0, 9).append("."));
+		input.resize(9);
+		return (input.append("."));
 	}
-	else if (input.length() < 10)
+	else
 	{
-		return (input.append("         ", 0, input.length() - 10).substr(0, 10));
+		while (input.length() < 10)
+			input = " " + input;
+		return (input);
 	}
-	return (input.substr(0, 10));
 }
 
 std::string Contact::getFirstName(void) const
@@ -111,7 +123,7 @@ bool	check_digit(std::string& number)
 	{
 		if (std::cin.eof())
 			return (0);
-		if (!isdigit(number[i]))
+		if (!isdigit(number[i]) && (number[0] != '+' || i != 0))
 		{
 			std::cout << "Invalid input, please input numbers only.\nInput: " << std::endl;
 			std::getline(std::cin, number);
@@ -250,7 +262,7 @@ int	main(void)
 			check_digit(input);
 			phoneBook.SearchContact(input);
 		}
-		else if (ft_strcmp(input, "EXIT") == 0)
+		else if (ft_strcmp(input, "EXIT") == 0 || std::cin.eof())
 			break ;
 		else
 			std::cout << "Invalid command. Please try again." << std::endl;
