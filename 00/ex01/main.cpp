@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:29:31 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/13 16:53:29 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:19:35 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,20 @@ Contact::~Contact(void)
 
 std::string Contact::limitString(const std::string& str) const 
 {
-	int space = 9;
 	std::string input = str;
-
-	while (str[space] == ' ')
-		space--;
-	input = str.substr(0, space + 1);
-	while (input.length() == 0)
+	
+	if (input[9] == ' ')
 	{
-		std::cout << "Input is empty, please enter a valid input.\nInput: " << std::endl;
-		std::getline(std::cin, input);
+		input = input.substr(0, 9);
 	}
 	if (input.length() > 10)
+	{
 		return (input.substr(0, 9).append("."));
+	}
 	else if (input.length() < 10)
-		return (input.append("         ", 0, input.length() - 10));
+	{
+		return (input.append("         ", 0, input.length() - 10).substr(0, 10));
+	}
 	return (input.substr(0, 10));
 }
 
