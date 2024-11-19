@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 14:49:02 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/19 11:36:46 by nde-vant         ###   ########.fr       */
+/*   Created: 2024/11/19 11:44:54 by nde-vant          #+#    #+#             */
+/*   Updated: 2024/11/19 14:10:34 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 #include <iostream>
 #include <string>
 
-class Zombie
-{
+class Zombie {
 	private:
-		std::string name;
+	std::string name;
 	
 	public:
 	Zombie(void);
-	Zombie(std::string name);
 	~Zombie(void);
 	
 	void announce(void);
+	void setName(std::string name);
 };
 
-void randomChump(std::string name);
-Zombie* newZombie(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

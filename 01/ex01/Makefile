@@ -6,9 +6,9 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRCS := main.cpp \
-        Zombie.cpp \
-        newZombie.cpp \
-        randomChump.cpp
+		Zombie.cpp \
+		zombieHorde.cpp
+        
 
 # Object files directory
 OBJDIR := objs
@@ -17,7 +17,7 @@ OBJDIR := objs
 OBJS := $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 # Executable name
-TARGET := Zombie
+TARGET := Horde
 
 # Checkmark and color codes
 CHECK = ✓

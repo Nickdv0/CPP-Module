@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:06:12 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/11/18 15:11:04 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:32:43 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,17 @@
 
 Zombie::~Zombie(void)
 {
-	std::cout << "Zombie " << name << " has been destroyed." << std::endl;
+	std::cout << name << " has been destroyed." << std::endl;
 };
+Zombie::Zombie(std::string name)
+{
+	this->name = name;
+};
+Zombie::Zombie(void)
+{
+	this->name = "default Zombie";
+};
+void Zombie::announce(void)
+{
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
