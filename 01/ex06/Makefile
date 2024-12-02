@@ -6,8 +6,7 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRCS := main.cpp \
-		Harl.cpp
-		
+		Harl.cpp \
         
 
 # Object files directory
