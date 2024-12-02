@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:11:16 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/02 13:19:34 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:23:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 
 	if (s1 == s2)
 	{
-		std::cerr << "Error: s1 and s2 are the same" << std::endl;
+		std::cerr << "Error: s1 and s2 are the same. Please enter different strings." << std::endl;
 		return (5);
 	}
 
