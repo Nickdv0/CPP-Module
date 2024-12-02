@@ -6,6 +6,7 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Source files
 SRCS := main.cpp \
+		ft_replace.cpp \
         
 
 # Object files directory

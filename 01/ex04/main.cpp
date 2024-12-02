@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:11:16 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/02 13:08:37 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:19:34 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,17 @@ int main(int argc, char **argv)
 
 	std::ofstream outfile;
 	
-	outfile.open(filename + ".replace");
+	outfile.open((filename + ".replace").c_str());
+	
 	if (!outfile.is_open())
 	{
 		std::cerr << "Error: Could not create output file" << std::endl;
 		return (4);
 	}
 
-	ft_replace(file, outfile, s1, s2);
+	int result = ft_replace(file, outfile, s1, s2);
 	
 	outfile.close();
 	file.close();
-	return (0);
+	return (result);
 }
