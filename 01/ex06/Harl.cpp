@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:25:56 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/02 17:00:11 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:01:54 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ void Harl::complain(const int level) const
 	for (size_t i = level; i < 4; i++)
 	{
 		(this->*func[i])();
-		return;
 	}
 }

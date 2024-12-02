@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:25:22 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/02 17:00:03 by nde-vant         ###   ########.fr       */
+/*   Updated: 2024/12/02 17:01:49 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ int main(int argc, char **argv)
 	{
 	case 0:
 		harl.complain(0);
+		break;
 	case 1:
 		harl.complain(1);
+		break;
 	case 2:
 		harl.complain(2);
+		break;
 	case 3:
 		harl.complain(3);
 		break;
