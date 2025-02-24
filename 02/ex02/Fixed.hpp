@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:13:50 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/09 16:35:29 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:49:31 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class Fixed {
 	private:
-		int value;
-		static const int fractionalBits= 8;
+		int					_value;
+		static const int	_fractionalBits= 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &src);

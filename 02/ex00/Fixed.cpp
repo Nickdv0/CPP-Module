@@ -6,13 +6,13 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:16:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2024/12/09 11:15:46 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:48:29 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : value(0) {
+Fixed::Fixed() : _value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -22,12 +22,12 @@ Fixed::~Fixed() {
 
 void Fixed::setRawBits(int const raw) {
 	// std::cout << "setRawBits member function called" << std::endl;
-	this->value = raw;
+	this->_value = raw;
 }
 
 int Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->value;
+	return this->_value;
 }
 
 Fixed &Fixed::operator=(const Fixed &src) {
