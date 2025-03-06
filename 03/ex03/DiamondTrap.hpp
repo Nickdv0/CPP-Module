@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 13:56:49 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/03/06 16:27:37 by nde-vant         ###   ########.fr       */
+/*   Created: 2025/03/06 15:58:07 by nde-vant          #+#    #+#             */
+/*   Updated: 2025/03/06 16:28:43 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ClapTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
 		std::string	_name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
-	
+
 	public:
-		ClapTrap();
-		ClapTrap(std::string name);
-		~ClapTrap();
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		~DiamondTrap();
 		
-		ClapTrap &operator=(ClapTrap const &src);
-	
-		void	attack(std::string const &target);
+		DiamondTrap &operator=(DiamondTrap const &src);
+
+		using	ScavTrap::attack;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		void	whoAmI();
 };
 
 #endif

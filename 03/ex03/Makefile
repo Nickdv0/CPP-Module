@@ -7,6 +7,9 @@ CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 # Source files
 SRCS := main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp
         
 
 # Object files directory
@@ -16,7 +19,7 @@ OBJDIR := objs
 OBJS := $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 # Executable name
-TARGET := ClapTrap
+TARGET := DiamondTrap
 
 # Checkmark and color codes
 CHECK = ✓
