@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:13:50 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/02/24 14:49:31 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:22:13 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ class Fixed {
 		~Fixed();
 		
 		Fixed &operator=(const Fixed &src);
-		
-		friend std::ostream &operator<<(std::ostream &o, const Fixed &src);
-		
+				
 		bool operator>(const Fixed &src) const;
 		bool operator<(const Fixed &src) const;
 		bool operator>=(const Fixed &src) const;
@@ -57,7 +55,8 @@ class Fixed {
 		static Fixed &max(Fixed &a, Fixed &b);
 		static const Fixed &min(const Fixed &a, const Fixed &b);
 		static const Fixed &max(const Fixed &a, const Fixed &b);
-		
 };
+
+std::ostream &operator<<(std::ostream &o, const Fixed &src);
 
 #endif

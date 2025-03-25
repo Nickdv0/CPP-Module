@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:13:50 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/03/05 11:28:31 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:21:43 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ class Fixed {
 		void setRawBits(int const raw);
 		int getRawBits(void) const;
 		
-		friend std::ostream &operator<<(std::ostream &o, const Fixed &src);
 		float toFloat(void) const;
 		int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &o, const Fixed &src);
 
 #endif
