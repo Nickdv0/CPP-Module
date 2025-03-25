@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:16:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/02/24 14:50:46 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:26:43 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed &Fixed::operator=(const Fixed &src) {
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &o, const Fixed &src) {
+std::ostream& operator<<(std::ostream &o, const Fixed &src) {
 	o << src.toFloat();
 	return o;
 }
