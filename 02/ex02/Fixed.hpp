@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:13:50 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/03/25 17:22:13 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:23:16 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ class Fixed {
 		static const Fixed &max(const Fixed &a, const Fixed &b);
 };
 
-std::ostream &operator<<(std::ostream &o, const Fixed &src);
+std::ostream& operator<<(std::ostream &o, const Fixed &src);
 
 #endif
