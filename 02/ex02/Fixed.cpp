@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:16:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/03/25 17:26:43 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/03/31 12:08:59 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ bool Fixed::operator!=(const Fixed &src) const {
 	return (getRawBits() != src.getRawBits());
 }
 
-Fixed Fixed::operator+(const Fixed &src) {
+Fixed Fixed::operator+(const Fixed &src) const {
 	return Fixed(toFloat() + src.toFloat());
 }
 
-Fixed Fixed::operator-(const Fixed &src) {
+Fixed Fixed::operator-(const Fixed &src) const {
 	return Fixed(toFloat() - src.toFloat());
 }
 
-Fixed Fixed::operator*(const Fixed &src) {
+Fixed Fixed::operator*(const Fixed &src) const{
 	return Fixed(toFloat() * src.toFloat());
 }
 
-Fixed Fixed::operator/(const Fixed &src) {
+Fixed Fixed::operator/(const Fixed &src) const{
 	if (src.toFloat() == 0)
 		return Fixed(0);
 	return Fixed(toFloat() / src.toFloat());
