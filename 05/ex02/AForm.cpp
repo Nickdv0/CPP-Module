@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:28 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:18:29 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 13:51:51 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ AForm& AForm::operator=(const AForm& other)
 {
 	if (this != &other)
 	{
-		// Note: _name, _gradeToSign, and _gradeToExecute are const, so we can only copy _signed
 		_signed = other._signed;
 	}
 	return *this;
@@ -105,7 +104,6 @@ const char* AForm::FormNotSignedException::what() const throw()
 	return "Form is not signed!";
 }
 
-// Insertion operator overload
 std::ostream& operator<<(std::ostream& os, const AForm& form)
 {
 	os << "Form " << form.getName() << ", signed: " << (form.isSigned() ? "yes" : "no") 

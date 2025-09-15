@@ -6,43 +6,38 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:19:15 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:19:16 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 13:56:42 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-// Static array initialization
 Intern::FormCreator Intern::_formCreators[3] = {
 	{"shrubbery creation", &Intern::createShrubberyForm},
 	{"robotomy request", &Intern::createRobotomyForm},
 	{"presidential pardon", &Intern::createPresidentialForm}
 };
 
-// Default constructor
 Intern::Intern()
 {
 }
 
-// Copy constructor
 Intern::Intern(const Intern& other)
 {
-	(void)other; // Intern has no attributes to copy
+	(void)other;
 }
 
 // Assignment operator
 Intern& Intern::operator=(const Intern& other)
 {
-	(void)other; // Intern has no attributes to assign
+	(void)other;
 	return *this;
 }
 
-// Destructor
 Intern::~Intern()
 {
 }
 
-// Form creation
 AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 {
 	for (int i = 0; i < 3; i++)
@@ -58,7 +53,6 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 	throw UnknownFormException();
 }
 
-// Static helper functions
 AForm* Intern::createShrubberyForm(const std::string& target)
 {
 	return new ShrubberyCreationForm(target);
@@ -74,7 +68,6 @@ AForm* Intern::createPresidentialForm(const std::string& target)
 	return new PresidentialPardonForm(target);
 }
 
-// Exception implementation
 const char* Intern::UnknownFormException::what() const throw()
 {
 	return "Unknown form name!";
