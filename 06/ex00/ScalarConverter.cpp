@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:17:43 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:22:27 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 13:48:29 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,15 @@ void ScalarConverter::convert(const std::string& literal)
 		return;
 	}
 
-	// Check for pseudo-literals first
 	if (isPseudoLiteral(literal))
 	{
 		handlePseudoLiteral(literal);
 		return;
 	}
 
-	// Detect type and convert
 	if (isChar(literal))
 	{
-		char c = literal[1]; // Get character between quotes
+		char c = literal[1];
 		convertFromChar(c);
 	}
 	else if (isInt(literal))
