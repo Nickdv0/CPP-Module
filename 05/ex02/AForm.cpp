@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:28 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/09/15 13:51:51 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:29:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,7 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
 	_signed = true;
 }
 
-// Form execution
-void AForm::execute(const Bureaucrat& executor) const
-{
-	if (!_signed)
-		throw FormNotSignedException();
-	if (executor.getGrade() > _gradeToExecute)
-		throw GradeTooLowException();
-	executeAction();
-}
+
 
 // Exception implementations
 const char* AForm::GradeTooHighException::what() const throw()

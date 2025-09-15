@@ -6,11 +6,12 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:47 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/09/15 13:54:19 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:29:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 #include <cstdlib>
 #include <ctime>
 
@@ -47,8 +48,13 @@ const std::string& RobotomyRequestForm::getTarget() const
 	return _target;
 }
 
-void RobotomyRequestForm::executeAction() const
+void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
+	if (!isSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > getGradeToExecute())
+		throw GradeTooLowException();
+		
 	std::cout << "* DRILLING NOISES * BZZZZT * WHIRRRR * CLANK *" << std::endl;
 	
 	std::srand(std::time(0));

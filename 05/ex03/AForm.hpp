@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:19:02 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/09/15 13:55:37 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:29:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ public:
 	int					getGradeToExecute() const;
 
 	void				beSigned(const Bureaucrat& bureaucrat);
-	void				execute(const Bureaucrat& executor) const;
 
-	virtual void		executeAction() const = 0;
+	virtual void		execute(const Bureaucrat& executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{

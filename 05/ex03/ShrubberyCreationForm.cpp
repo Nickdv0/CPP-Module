@@ -6,11 +6,12 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:19:35 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/09/15 13:58:10 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/09/15 16:29:22 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", 145, 137), _target("default")
@@ -46,8 +47,13 @@ const std::string& ShrubberyCreationForm::getTarget() const
 	return _target;
 }
 
-void ShrubberyCreationForm::executeAction() const
+void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
+	if (!isSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > getGradeToExecute())
+		throw GradeTooLowException();
+		
 	std::string filename = _target + "_shrubbery";
 	std::ofstream file(filename.c_str());
 	
