@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:19:18 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:19:19 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/14 20:53:39 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,18 @@ public:
 	};
 
 private:
-	// Helper structure for form creation
-	struct FormCreator
-	{
-		std::string name;
-		AForm* (*create)(const std::string& target);
-	};
+   // Helper structure for form creation
+   struct FormCreator
+   {
+	   std::string name;
+	   AForm* (*create)(const std::string& target);
+   };
 
-	// Static array of form creators
-	static FormCreator _formCreators[3];
+   FormCreator _formCreators[3];
 
-	// Static helper functions
-	static AForm* createShrubberyForm(const std::string& target);
-	static AForm* createRobotomyForm(const std::string& target);
-	static AForm* createPresidentialForm(const std::string& target);
+   AForm* createShrubberyForm(const std::string& target);
+   AForm* createRobotomyForm(const std::string& target);
+   AForm* createPresidentialForm(const std::string& target);
 };
 
 #endif
