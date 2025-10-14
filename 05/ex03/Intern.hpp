@@ -1,4 +1,8 @@
-/* ************************************************************************** */
+/* ***********************	~Int	AForm*				makeForm(const std::string& formName, const std::string& target);
+
+	class UnknownFormException : public std::exception);
+
+	AForm*				makeForm(const std::string& formName, const std::string& target);*********************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
@@ -21,16 +25,15 @@
 class Intern
 {
 public:
-	// Orthodox Canonical Form
 	Intern();
 	Intern(const Intern& other);
 	Intern& operator=(const Intern& other);
 	~Intern();
 
-	// Form creation
+
 	AForm*	makeForm(const std::string& formName, const std::string& target);
 
-	// Exception class
+
 	class UnknownFormException : public std::exception
 	{
 	public:
@@ -38,7 +41,6 @@ public:
 	};
 
 private:
-   // Helper structure for form creation
    struct FormCreator
    {
 	   std::string name;

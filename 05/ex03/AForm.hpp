@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:19:02 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/14 20:53:39 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/14 21:32:12 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <string>
 #include <exception>
 
-// Forward declaration
 class Bureaucrat;
 
 class AForm
@@ -29,27 +28,22 @@ private:
 	const int			_gradeToExecute;
 
 public:
-	// Orthodox Canonical Form
 	AForm();
 	AForm(const std::string& name, int gradeToSign, int gradeToExecute);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& other);
 	virtual ~AForm();
 
-	// Getters
 	const std::string&	getName() const;
 	bool				isSigned() const;
 	int					getGradeToSign() const;
 	int					getGradeToExecute() const;
 
-	// Form signing and execution
 	void				beSigned(const Bureaucrat& bureaucrat);
 	void				execute(const Bureaucrat& executor) const;
 
-	// Pure virtual function for execution
 	virtual void		executeAction() const = 0;
 
-	// Exception classes
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -68,12 +62,10 @@ public:
 		virtual const char* what() const throw();
 	};
 
-		// Constants
 	#define HIGHEST_GRADE 1
 	#define LOWEST_GRADE 150
 };
 
-// Insertion operator overload
 std::ostream& operator<<(std::ostream& os, const AForm& form);
 
 #endif

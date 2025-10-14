@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:44 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:18:45 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/14 21:32:11 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ private:
 	std::string	_target;
 
 public:
-	// Orthodox Canonical Form
 	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string& target);
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
 	virtual ~PresidentialPardonForm();
 
-	// Getter
 	const std::string&	getTarget() const;
 
-	// Implementation of pure virtual function
 	virtual void		executeAction() const;
 };
 

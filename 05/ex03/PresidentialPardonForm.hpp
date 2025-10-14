@@ -21,17 +21,17 @@ private:
 	std::string	_target;
 
 public:
-	// Orthodox Canonical Form
+
 	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string& target);
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
 	virtual ~PresidentialPardonForm();
 
-	// Getter
+
 	const std::string&	getTarget() const;
 
-	// Implementation of pure virtual function
+
 	virtual void		executeAction() const;
 };
 
