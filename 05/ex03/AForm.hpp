@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 18:18:35 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:18:37 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:36:04 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,6 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
-
-
-	static const int	HIGHEST_GRADE = 1;
-	static const int	LOWEST_GRADE = 150;
 };
 
 
