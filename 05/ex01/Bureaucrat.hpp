@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:18:12 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:14:34 by nde-vant         ###   ########.fr       */
+/*   Created: 2025/08/10 07:18:00 by nde-vant          #+#    #+#             */
+/*   Updated: 2025/10/15 18:27:44 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <exception>
 
+#define HIGHEST_GRADE 1;
+#define LOWEST_GRADE 150;
 
 class Form;
 
@@ -43,9 +45,6 @@ public:
 	void				decrementGrade();
 
 
-	void				signForm(Form& form);
-
-
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -57,10 +56,6 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
-
-
-	static const int	HIGHEST_GRADE = 1;
-	static const int	LOWEST_GRADE = 150;
 };
 
 
