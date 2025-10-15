@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:30:48 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:33:19 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ public:
 
 	void				incrementGrade();
 	void				decrementGrade();
+
+	void 				signForm(Form& form);
 
 
 	class GradeTooHighException : public std::exception

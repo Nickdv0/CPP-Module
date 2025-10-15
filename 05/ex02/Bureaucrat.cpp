@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:33 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:15:33 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:32:47 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
 	{
-
 		_grade = other._grade;
 	}
 	return *this;
