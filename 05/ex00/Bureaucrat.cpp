@@ -6,12 +6,11 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:17:38 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:13:38 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:30:31 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(LOWEST_GRADE)
 {

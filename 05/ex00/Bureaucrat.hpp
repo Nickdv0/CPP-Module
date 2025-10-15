@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/10/15 18:26:24 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:30:25 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <string>
 #include <exception>
 
-#define HIGHEST_GRADE 1;
-#define LOWEST_GRADE 150;
+#define HIGHEST_GRADE 1
+#define LOWEST_GRADE 150
 
 class Bureaucrat
 {
