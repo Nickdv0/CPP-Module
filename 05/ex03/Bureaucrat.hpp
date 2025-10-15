@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:19:09 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:19:10 by nde-vant         ###   ########.fr       */
+/*   Created: 2025/10/15 18:18:51 by nde-vant          #+#    #+#             */
+/*   Updated: 2025/10/15 18:18:52 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <exception>
 
-// Forward declaration
+
 class AForm;
 
 class Bureaucrat
@@ -27,26 +27,26 @@ private:
 	int					_grade;
 
 public:
-	// Orthodox Canonical Form
+
 	Bureaucrat();
 	Bureaucrat(const std::string& name, int grade);
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat& operator=(const Bureaucrat& other);
 	~Bureaucrat();
 
-	// Getters
+
 	const std::string&	getName() const;
 	int					getGrade() const;
 
-	// Grade manipulation
+
 	void				incrementGrade();
 	void				decrementGrade();
 
-	// Form signing and execution
+
 	void				signForm(AForm& form);
 	void				executeForm(const AForm& form) const;
 
-	// Exception classes
+
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -59,12 +59,12 @@ public:
 		virtual const char* what() const throw();
 	};
 
-	// Constants
+
 	static const int	HIGHEST_GRADE = 1;
 	static const int	LOWEST_GRADE = 150;
 };
 
-// Insertion operator overload
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif

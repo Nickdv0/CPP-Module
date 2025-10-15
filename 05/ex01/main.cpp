@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:21 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:18:22 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:15:12 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int main()
 		bob.signForm(form3);
 
 		std::cout << "\n4. Testing invalid form creation:" << std::endl;
-		
-		// Try grade too high
+
+
 		try
 		{
 			Form invalidForm1("Invalid1", 0, 50);
@@ -59,7 +59,7 @@ int main()
 			std::cout << "Exception caught: " << e.what() << std::endl;
 		}
 
-		// Try grade too low
+
 		try
 		{
 			Form invalidForm2("Invalid2", 50, 151);
@@ -78,7 +78,7 @@ int main()
 		std::cout << "Assigned: " << assigned << std::endl;
 
 		std::cout << "\n6. Testing signing already signed form:" << std::endl;
-		alice.signForm(form1); // form1 is already signed
+		alice.signForm(form1);
 
 	}
 	catch (std::exception& e)

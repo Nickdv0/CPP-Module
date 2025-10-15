@@ -1,14 +1,4 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:19:56 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:22:29 by nde-vant         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "Serializer.hpp"
 #include "Data.hpp"
@@ -18,7 +8,7 @@ int main()
 {
 	std::cout << "=== Testing Serializer Class ===" << std::endl;
 
-	// Create a Data object
+
 	Data originalData;
 	originalData.id = 42;
 	originalData.name = "Test Data";
@@ -32,13 +22,13 @@ int main()
 	std::cout << "Value: " << originalData.value << std::endl;
 	std::cout << "Active: " << (originalData.active ? "true" : "false") << std::endl;
 
-	// Serialize the pointer
+
 	uintptr_t serialized = Serializer::serialize(&originalData);
 	std::cout << "\n2. Serialization:" << std::endl;
 	std::cout << "Serialized value: " << serialized << std::endl;
 	std::cout << "Serialized value (hex): 0x" << std::hex << serialized << std::dec << std::endl;
 
-	// Deserialize the value
+
 	Data* deserialized = Serializer::deserialize(serialized);
 	std::cout << "\n3. Deserialization:" << std::endl;
 	std::cout << "Deserialized address: " << deserialized << std::endl;
@@ -47,12 +37,12 @@ int main()
 	std::cout << "Value: " << deserialized->value << std::endl;
 	std::cout << "Active: " << (deserialized->active ? "true" : "false") << std::endl;
 
-	// Verify that the pointers are equal
+
 	std::cout << "\n4. Verification:" << std::endl;
-	std::cout << "Original pointer == Deserialized pointer: " 
+	std::cout << "Original pointer == Deserialized pointer: "
 			  << ((&originalData == deserialized) ? "true" : "false") << std::endl;
 
-	// Test with different data
+
 	std::cout << "\n5. Testing with different data:" << std::endl;
 	Data anotherData;
 	anotherData.id = 100;
@@ -66,7 +56,7 @@ int main()
 	std::cout << "Original address: " << &anotherData << std::endl;
 	std::cout << "Deserialized address: " << deserialized2 << std::endl;
 	std::cout << "Pointers equal: " << ((&anotherData == deserialized2) ? "true" : "false") << std::endl;
-	std::cout << "Data intact: " << ((anotherData.id == deserialized2->id && 
+	std::cout << "Data intact: " << ((anotherData.id == deserialized2->id &&
 									  anotherData.name == deserialized2->name &&
 									  anotherData.value == deserialized2->value &&
 									  anotherData.active == deserialized2->active) ? "true" : "false") << std::endl;
