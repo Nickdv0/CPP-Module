@@ -9,6 +9,7 @@
 #include <cfloat>
 #include <cmath>
 #include <cstdlib>
+#include <iomanip>
 
 class ScalarConverter
 {
