@@ -1,14 +1,4 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:35:40 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:40:41 by nde-vant         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
@@ -20,19 +10,19 @@ template<typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-	// Orthodox Canonical Form
+
 	MutantStack();
 	MutantStack(const MutantStack& other);
 	MutantStack& operator=(const MutantStack& other);
 	~MutantStack();
 
-	// Iterator typedefs - using the underlying container's iterators
+
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 	typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
-	// Iterator methods
+
 	iterator begin();
 	iterator end();
 	const_iterator begin() const;
@@ -44,21 +34,21 @@ public:
 	const_reverse_iterator rend() const;
 };
 
-// Implementation must be in header for templates
 
-// Default constructor
+
+
 template<typename T>
 MutantStack<T>::MutantStack() : std::stack<T>()
 {
 }
 
-// Copy constructor
+
 template<typename T>
 MutantStack<T>::MutantStack(const MutantStack& other) : std::stack<T>(other)
 {
 }
 
-// Assignment operator
+
 template<typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack& other)
 {
@@ -69,13 +59,13 @@ MutantStack<T>& MutantStack<T>::operator=(const MutantStack& other)
 	return *this;
 }
 
-// Destructor
+
 template<typename T>
 MutantStack<T>::~MutantStack()
 {
 }
 
-// Iterator implementations
+
 template<typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {

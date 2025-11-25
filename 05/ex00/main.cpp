@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:03 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:18:04 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:13:52 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int main()
 		std::cout << "After decrement: " << bob << std::endl;
 
 		std::cout << "\n4. Testing edge cases:" << std::endl;
-		
-		// Try to increment highest grade
+
+
 		try
 		{
 			alice.incrementGrade();
@@ -47,7 +47,7 @@ int main()
 			std::cout << "Exception caught: " << e.what() << std::endl;
 		}
 
-		// Try to decrement lowest grade
+
 		try
 		{
 			charlie.decrementGrade();
@@ -58,8 +58,8 @@ int main()
 		}
 
 		std::cout << "\n5. Testing invalid constructor parameters:" << std::endl;
-		
-		// Try grade too high
+
+
 		try
 		{
 			Bureaucrat invalid1("Invalid1", 0);
@@ -69,7 +69,7 @@ int main()
 			std::cout << "Exception caught: " << e.what() << std::endl;
 		}
 
-		// Try grade too low
+
 		try
 		{
 			Bureaucrat invalid2("Invalid2", 151);

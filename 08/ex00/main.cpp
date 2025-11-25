@@ -1,14 +1,4 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:35:02 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:40:41 by nde-vant         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <iostream>
@@ -22,7 +12,7 @@ int main()
 
 	try
 	{
-		// Test 1: Vector container
+
 		std::cout << "\n1. Testing with std::vector:" << std::endl;
 		std::vector<int> vec;
 		vec.push_back(1);
@@ -36,7 +26,7 @@ int main()
 			std::cout << *it << " ";
 		std::cout << std::endl;
 
-		// Find existing element
+
 		try
 		{
 			std::vector<int>::iterator found = easyfind(vec, 10);
@@ -48,7 +38,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Find non-existing element
+
 		try
 		{
 			std::vector<int>::iterator found = easyfind(vec, 99);
@@ -59,7 +49,7 @@ int main()
 			std::cout << "Exception when looking for 99: " << e.what() << std::endl;
 		}
 
-		// Test 2: List container
+
 		std::cout << "\n2. Testing with std::list:" << std::endl;
 		std::list<int> lst;
 		lst.push_back(2);
@@ -72,7 +62,7 @@ int main()
 			std::cout << *it << " ";
 		std::cout << std::endl;
 
-		// Find existing element
+
 		try
 		{
 			std::list<int>::iterator found = easyfind(lst, 6);
@@ -84,7 +74,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Find first element
+
 		try
 		{
 			std::list<int>::iterator found = easyfind(lst, 2);
@@ -95,7 +85,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Test 3: Deque container
+
 		std::cout << "\n3. Testing with std::deque:" << std::endl;
 		std::deque<int> deq;
 		deq.push_back(100);
@@ -117,7 +107,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Test 4: Const container
+
 		std::cout << "\n4. Testing with const container:" << std::endl;
 		const std::vector<int> constVec(vec);
 		try
@@ -131,7 +121,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Test 5: Empty container
+
 		std::cout << "\n5. Testing with empty container:" << std::endl;
 		std::vector<int> emptyVec;
 		try
@@ -144,7 +134,7 @@ int main()
 			std::cout << "Exception in empty vector: " << e.what() << std::endl;
 		}
 
-		// Test 6: Multiple occurrences
+
 		std::cout << "\n6. Testing with multiple occurrences:" << std::endl;
 		std::vector<int> multiVec;
 		multiVec.push_back(5);
@@ -168,7 +158,7 @@ int main()
 			std::cout << "Exception: " << e.what() << std::endl;
 		}
 
-		// Test 7: Large container
+
 		std::cout << "\n7. Testing with large container:" << std::endl;
 		std::vector<int> largeVec;
 		for (int i = 0; i < 10000; ++i)

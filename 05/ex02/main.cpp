@@ -6,7 +6,7 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:18:39 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:18:40 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:15:47 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,39 +43,39 @@ int main()
 		std::cout << pardonForm << std::endl;
 
 		std::cout << "\n2. Testing form signing:" << std::endl;
-		
-		// ShrubberyCreationForm: sign 145, exec 137
+
+
 		employee.signForm(shrubForm);
-		
-		// RobotomyRequestForm: sign 72, exec 45
+
+
 		supervisor.signForm(robotForm);
-		
-		// PresidentialPardonForm: sign 25, exec 5
+
+
 		manager.signForm(pardonForm);
 
 		std::cout << "\n3. Testing form execution:" << std::endl;
-		
-		// Execute signed forms with appropriate grades
-		employee.executeForm(shrubForm); // grade 100 can't execute (needs 137)
-		supervisor.executeForm(shrubForm); // grade 50 can execute
-		
-		supervisor.executeForm(robotForm); // grade 50 can't execute (needs 45)
-		manager.executeForm(robotForm); // grade 25 can execute
-		
-		manager.executeForm(pardonForm); // grade 25 can't execute (needs 5)
-		president.executeForm(pardonForm); // grade 1 can execute
+
+
+		employee.executeForm(shrubForm);
+		supervisor.executeForm(shrubForm);
+
+		supervisor.executeForm(robotForm);
+		manager.executeForm(robotForm);
+
+		manager.executeForm(pardonForm);
+		president.executeForm(pardonForm);
 
 		std::cout << "\n4. Testing failed signing (grade too low):" << std::endl;
 		ShrubberyCreationForm shrubForm2("home");
 		RobotomyRequestForm robotForm2("R2D2");
 		PresidentialPardonForm pardonForm2("Arthur Dent");
-		
-		intern.signForm(shrubForm2); // grade 150 can sign (needs 145)
-		intern.signForm(robotForm2); // grade 150 can't sign (needs 72)
-		intern.signForm(pardonForm2); // grade 150 can't sign (needs 25)
+
+		intern.signForm(shrubForm2);
+		intern.signForm(robotForm2);
+		intern.signForm(pardonForm2);
 
 		std::cout << "\n5. Testing execution of unsigned form:" << std::endl;
-		president.executeForm(robotForm2); // not signed
+		president.executeForm(robotForm2);
 
 		std::cout << "\n6. Testing multiple robotomy attempts:" << std::endl;
 		manager.signForm(robotForm2);

@@ -1,14 +1,4 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:55:00 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:49:04 by nde-vant         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "RPN.hpp"
 #include <iostream>
@@ -20,7 +10,7 @@ int main(int argc, char* argv[])
 		std::cerr << "Usage: " << argv[0] << " \"<RPN expression>\"" << std::endl;
 		return 1;
 	}
-	
+
 	try
 	{
 		RPN calculator;
@@ -32,6 +22,6 @@ int main(int argc, char* argv[])
 		std::cerr << e.what() << std::endl;
 		return 1;
 	}
-	
+
 	return 0;
 }

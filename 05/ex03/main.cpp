@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 07:19:21 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:19:22 by nde-vant         ###   ########.fr       */
+/*   Created: 2025/10/15 18:19:07 by nde-vant          #+#    #+#             */
+/*   Updated: 2025/10/15 18:19:08 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 		std::cout << supervisor << std::endl;
 
 		std::cout << "\n2. Testing valid form creation:" << std::endl;
-		
+
 		AForm* shrubForm = someRandomIntern.makeForm("shrubbery creation", "garden");
 		AForm* robotForm = someRandomIntern.makeForm("robotomy request", "Bender");
 		AForm* pardonForm = someRandomIntern.makeForm("presidential pardon", "Ford Prefect");
@@ -44,25 +44,25 @@ int main()
 		std::cout << *pardonForm << std::endl;
 
 		std::cout << "\n3. Testing form workflow:" << std::endl;
-		
-		// Sign and execute shrubbery form
+
+
 		supervisor.signForm(*shrubForm);
 		supervisor.executeForm(*shrubForm);
-		
-		// Sign and execute robotomy form
+
+
 		supervisor.signForm(*robotForm);
 		manager.executeForm(*robotForm);
-		
-		// Sign and execute presidential pardon
+
+
 		manager.signForm(*pardonForm);
 		president.executeForm(*pardonForm);
 
 		std::cout << "\n4. Testing invalid form names:" << std::endl;
-		
+
 		try
 		{
 			AForm* invalidForm = someRandomIntern.makeForm("invalid form", "target");
-			(void)invalidForm; // Suppress unused variable warning
+			(void)invalidForm;
 		}
 		catch (std::exception& e)
 		{
@@ -72,7 +72,7 @@ int main()
 		try
 		{
 			AForm* anotherInvalidForm = someRandomIntern.makeForm("wrong name", "target");
-			(void)anotherInvalidForm; // Suppress unused variable warning
+			(void)anotherInvalidForm;
 		}
 		catch (std::exception& e)
 		{
@@ -84,13 +84,13 @@ int main()
 			Intern someRandomIntern2;
 			AForm* rrf;
 			rrf = someRandomIntern2.makeForm("robotomy request", "Bender");
-			
+
 			std::cout << *rrf << std::endl;
-			
-			// Sign and execute it
+
+
 			manager.signForm(*rrf);
 			manager.executeForm(*rrf);
-			
+
 			delete rrf;
 		}
 
@@ -105,7 +105,7 @@ int main()
 			std::cout << "Exception caught: " << e.what() << std::endl;
 		}
 
-		// Clean up
+
 		delete shrubForm;
 		delete robotForm;
 		delete pardonForm;
