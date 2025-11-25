@@ -6,30 +6,26 @@
 /*   By: nde-vant <nde-vant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 07:35:09 by nde-vant          #+#    #+#             */
-/*   Updated: 2025/08/10 07:40:41 by nde-vant         ###   ########.fr       */
+/*   Updated: 2025/11/25 20:37:43 by nde-vant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <climits>
 
-// Default constructor
 Span::Span() : _maxSize(0)
 {
 }
 
-// Parametric constructor
 Span::Span(unsigned int N) : _maxSize(N)
 {
 	_numbers.reserve(N);
 }
 
-// Copy constructor
 Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers)
 {
 }
 
-// Assignment operator
 Span& Span::operator=(const Span& other)
 {
 	if (this != &other)
@@ -40,12 +36,10 @@ Span& Span::operator=(const Span& other)
 	return *this;
 }
 
-// Destructor
 Span::~Span()
 {
 }
 
-// Add single number
 void Span::addNumber(int number)
 {
 	if (_numbers.size() >= _maxSize)
@@ -53,13 +47,11 @@ void Span::addNumber(int number)
 	_numbers.push_back(number);
 }
 
-// Find shortest span
 unsigned int Span::shortestSpan() const
 {
 	if (_numbers.size() < 2)
 		throw NoSpanException();
 
-	// Sort a copy to find adjacent differences
 	std::vector<int> sorted(_numbers);
 	std::sort(sorted.begin(), sorted.end());
 
@@ -74,7 +66,6 @@ unsigned int Span::shortestSpan() const
 	return minSpan;
 }
 
-// Find longest span
 unsigned int Span::longestSpan() const
 {
 	if (_numbers.size() < 2)
@@ -86,7 +77,6 @@ unsigned int Span::longestSpan() const
 	return *maxIt - *minIt;
 }
 
-// Getters
 unsigned int Span::size() const
 {
 	return _numbers.size();
@@ -97,7 +87,6 @@ unsigned int Span::maxSize() const
 	return _maxSize;
 }
 
-// Exception implementations
 const char* Span::FullContainerException::what() const throw()
 {
 	return "Container is full, cannot add more elements";
